@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css.css" />
+
+    <title>Form Donasi - SampahBaik_YK</title>
+  </head>
+  <body>
+    <section class="formulir py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-7 mt-5">
+            <h2 class="mb-4 text-center">Formulir Donasi Sampah</h2>
+            <form>
+              <div class="mb-4 p-3 bg-light border rounded">
+                <h5 class="mb-3">Tata Cara Pengisian Formulir Donasi:</h5>
+                <ol class="list-group list-group-numbered">
+                  <li class="list-group-item">Pastikan semua data diri (Nama, No Telepon/WA, Alamat) diisi dengan benar dan lengkap untuk memudahkan proses verifikasi dan penjemputan (jika memilih opsi dijemput).</li>
+                  <li class="list-group-item">Barang yang didonasikan **hanya berupa sampah daur ulang** seperti kaca, plastik, atau logam.</li>
+                  <li class="list-group-item">Pilih jenis sampah yang akan Anda donasikan. Jika jenis sampah Anda tidak ada dalam pilihan, centang "Lainnya" dan tuliskan jenisnya pada kolom yang muncul.</li>
+                  <li class="list-group-item">Masukkan perkiraan jumlah berat total donasi sampah Anda dalam satuan Kilogram (Kg).</li>
+                  <li class="list-group-item">Pilih opsi penyerahan donasi: apakah Anda akan mengantar sendiri ke lokasi kami atau meminta penjemputan oleh tim kami.</li>
+                  <li class="list-group-item">Setelah semua data terisi, klik tombol "Kirim Donasi".</li>
+                  <li class="list-group-item">Tim kami akan segera menghubungi Anda untuk konfirmasi lebih lanjut setelah formulir diterima.</li>
+                </ol>
+              </div>
+              <div class="mb-3">
+                <label for="Nama" class="form-label">Nama Anda</label>
+                <input type="text" class="form-control" id="Nama" placeholder="Masukan Nama Anda" />
+              </div>
+              <div class="mb-3">
+                <label for="telp" class="form-label">No Telepon / WA</label>
+                <input type="number" class="form-control" id="telp" placeholder="Masukan Nomor WA Anda" />
+              </div>
+              <div class="mb-3"><label for="inputAddress" class="form-label">Alamat</label> <input type="text" class="form-control" id="inputAddress" placeholder="Masukan Alamat Anda" /></div>
+              <div class="mb-3">
+                <label for="jenis" class="form-label">Jenis Sampah yang didonasi</label>
+                <div id="customCheckboxContainer">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="option1" name="myOptions" value="Kaca" />
+                    <label class="form-check-label" for="option1">Kaca</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="option2" name="myOptions" value="Plastik" />
+                    <label class="form-check-label" for="option2">Plastik</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="option3" name="myOptions" value="Logam" />
+                    <label class="form-check-label" for="option3">Logam</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="customCheckbox" name="myOptions" value="custom" />
+                    <label class="form-check-label" for="customCheckbox">Lainnya (Isi Custom)</label>
+                  </div>
+                  <input type="text" class="form-control mt-2" id="customTextInput" style="display: none" placeholder="Isi opsi custom Anda" />
+                </div>
+                <p class="mt-2">Pilihan Anda saat ini: <span id="selectedValues" class="fw-bold"></span></p>
+              </div>
+
+              <div class="mb-3">
+                <label for="berat" class="form-label">Jumlah Berat Donasi</label>
+                <div class="input-group" style="width: 200px"><input type="number" class="form-control" id="berat" placeholder="Jumlah" aria-label="Masukan Jumlah berat total donasi" min="0" /> <span class="input-group-text">Kg</span></div>
+              </div>
+              <div class="mb-3">
+                <label for="pilihan_opsi" class="form-label">Opsi Penyerahan Donasi</label>
+                <select class="form-select" id="pilihan_opsi">
+                  <option selected disabled value="">Pilih Opsi...</option>
+                  <option value="Diantar">Diantar Sendiri ke Lokasi Kami</option>
+                  <option value="Diambil">Minta Penjemputan oleh Tim Kami</option>
+                </select>
+              </div>
+
+              <div class="d-flex justify-content-start gap-2 mt-4">
+                <a href="index.html" class="btn btn-outline-secondary"> <i class="fas fa-arrow-left me-1"></i> Kembali ke Beranda </a>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-1"></i> Kirim Donasi</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+      const customCheckbox = document.getElementById('customCheckbox'); // Checkbox "Lainnya"
+      const customTextInput = document.getElementById('customTextInput'); // Input teks untuk opsi custom
+      const allCheckboxes = document.querySelectorAll('input[name="myOptions"]'); // Semua checkbox dengan nama "myOptions"
+      const selectedValuesSpan = document.getElementById('selectedValues'); // Span untuk menampilkan pilihan
+
+      // Fungsi untuk memperbarui tampilan nilai yang dipilih
+      function updateSelectedValues() {
+        const selected = []; // Array untuk menyimpan nilai yang dipilih
+        allCheckboxes.forEach((checkbox) => {
+          // Iterasi melalui semua checkbox
+          if (checkbox.checked) {
+            // Jika checkbox dicentang
+            if (checkbox.id === 'customCheckbox' && customTextInput.value.trim() !== '') {
+              // Jika checkbox "Lainnya" dan input custom tidak kosong
+              selected.push(customTextInput.value.trim()); // Ambil nilai dari input custom
+            } else if (checkbox.id !== 'customCheckbox') {
+              // Jika checkbox standar (bukan "Lainnya")
+              selected.push(checkbox.value); // Ambil nilai dari checkbox standar
+            }
+          }
+        });
+        // Tampilkan nilai yang dipilih, dipisahkan koma
+        selectedValuesSpan.textContent = selected.length > 0 ? selected.join(', ') : 'Belum ada yang dipilih';
+      }
+
+      // Event listener untuk checkbox "Lainnya (Isi Custom)"
+      customCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+          // Jika "Lainnya" dicentang
+          customTextInput.style.display = 'block'; // Tampilkan input teks custom
+          customTextInput.focus(); // Fokuskan kursor ke input custom
+        } else {
+          // Jika "Lainnya" tidak dicentang
+          customTextInput.style.display = 'none'; // Sembunyikan input teks custom
+          customTextInput.value = ''; // Bersihkan nilai input custom
+        }
+        updateSelectedValues(); // Perbarui tampilan setelah perubahan
+      });
+
+      // Event listener untuk input teks custom
+      customTextInput.addEventListener('input', function () {
+        // Pastikan checkbox "Lainnya (Isi Custom)" tetap tercentang jika ada input
+        if (this.value.trim() !== '' && !customCheckbox.checked) {
+          customCheckbox.checked = true; // Centang otomatis jika pengguna mulai mengetik
+        }
+        // (Opsional: Jika input dikosongkan, dan UX menginginkan uncheck otomatis)
+        // else if (this.value.trim() === '' && customCheckbox.checked) {
+        //     customCheckbox.checked = false;
+        // }
+        updateSelectedValues(); // Perbarui tampilan setiap kali ada input
+      });
+
+      // Event listener untuk semua checkbox lainnya (selain checkbox custom)
+      allCheckboxes.forEach((checkbox) => {
+        if (checkbox.id !== 'customCheckbox') {
+          // Abaikan event listener duplikat untuk checkbox custom
+          checkbox.addEventListener('change', updateSelectedValues); // Panggil fungsi update saat ada perubahan
+        }
+      });
+
+      // Panggil fungsi updateSelectedValues saat halaman pertama kali dimuat untuk inisialisasi tampilan
+      updateSelectedValues();
+    </script>
+  </body>
+</html>

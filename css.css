@@ -1,0 +1,430 @@
+/* ---------------------------------------------
+Gaya Global (Pertimbangkan untuk menambahkan gaya dasar di sini jika perlu)
+--------------------------------------------- 
+*/
+body {
+  overflow-x: hidden; /* Mencegah scroll horizontal */
+  font-family: 'Arial', sans-serif; /* Contoh: Mendefinisikan font dasar */
+}
+
+/* ---------------------------------------------
+Gaya Banner Utama
+--------------------------------------------- 
+*/
+.main-banner {
+  background-image: url(../images/home_donasi.jpg); /* Pastikan path ini benar */
+  background-position: center center; /* Posisi gambar di tengah */
+  background-repeat: no-repeat; /* Mencegah gambar berulang jika ukurannya kecil */
+  background-size: cover; /* Memastikan gambar menutupi seluruh area banner */
+  padding: 100px 0; /* Padding atas-bawah, 0 untuk kiri-kanan jika container sudah mengatur */
+  text-align: center; /* Teks rata tengah */
+  background-color: #56ab2f; /* Warna latar belakang fallback atau dasar overlay */
+}   
+
+.main-banner h2 {
+  color: #fff; /* Warna teks putih */
+  font-size: 64px; /* Ukuran font */
+  font-weight: 700; /* Ketebalan font */
+  line-height: 1.2; /* Tinggi baris, disesuaikan agar mudah dibaca */
+}
+
+.main-banner h2 em {
+  font-style: normal; /* Gaya font normal (tidak miring) */
+  color: #000000; /* Warna teks hitam, pertimbangkan warna yang kurang kontras jika perlu */
+}
+
+.main-banner p {
+  color: #fff; /* Warna teks putih */
+  padding: 30px 0; /* Padding atas-bawah */
+  margin: 40px auto 0 auto; /* Margin atas, auto untuk kiri-kanan agar terpusat */
+  max-width: 800px; /* Lebar maksimum paragraf agar mudah dibaca */
+  border-top: 1px solid rgba(250,250,250,0.2); /* Garis batas atas tipis */
+}
+
+.main-banner .buttons {
+  margin-top: 30px; /* Margin atas untuk grup tombol */
+  display: flex; /* Menggunakan flexbox untuk penataan tombol */
+  justify-content: center; /* Tombol rata tengah secara horizontal */
+  align-items: center; /* Tombol rata tengah secara vertikal */
+  gap: 15px; /* Jarak antar tombol jika ada lebih dari satu */
+}
+
+.main-banner .big-border-button a {
+  font-size: 20px; /* Ukuran font tombol */
+  color: #ffffff; /* Warna teks tombol */
+  border: 1px solid #fff; /* Garis batas tombol */
+  padding: 15px 30px; /* Padding di dalam tombol */
+  display: inline-block; /* Agar padding dan margin bekerja dengan baik */
+  border-radius: 10px; /* Sudut tombol melengkung */
+  font-weight: 500; /* Ketebalan font tombol */
+  text-transform: capitalize; /* Huruf pertama setiap kata menjadi kapital */
+  letter-spacing: 0.5px; /* Jarak antar huruf */
+  transition: all .3s ease; /* Efek transisi halus saat hover */
+}
+
+.main-banner .big-border-button a:hover {
+  background-color: #fff; /* Warna latar tombol saat di-hover */
+  color: #00bdfe; /* Warna teks tombol saat di-hover (biru dari gaya asli) */
+}
+
+/* Tombol ikon sebagai tombol sekunder di sebelah .big-border-button */
+.main-banner .icon-button a {
+  display: inline-block; /* Agar padding dan margin bekerja */
+  font-size: 15px; /* Ukuran font */
+  font-weight: 500; /* Ketebalan font */
+  color: #fff; /* Warna teks */
+  transition: all .3s ease; /* Efek transisi halus */
+}
+
+.main-banner .icon-button a i {
+  margin-right: 6px; /* Margin kanan untuk ikon */
+  font-size: 16px; /* Ukuran ikon */
+}
+
+.main-banner .icon-button a:hover {
+  color: #fe7700; /* Warna teks saat di-hover (oranye dari gaya asli) */
+}
+
+/* ---------------------------------------------
+CSS Khusus untuk Halaman Artikel 
+---------------------------------------------
+*/
+
+/* ... (Gaya Global, Banner, Header Artikel seperti sebelumnya) ... */
+
+/* Gaya untuk bagian carousel artikel (sekarang daftar artikel biasa) */
+.artikel-section { /* Mengganti .artikel-carousel-section atau sesuaikan dengan nama kelas baru jika Anda ubah di HTML */
+    background-color: #ffffff;
+    padding: 50px 0;
+}
+
+.artikel-section h2 { /* Atau .artikel-carousel-section h2 jika Anda tidak mengubah nama kelas di HTML */
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center; /* Pastikan judul tetap di tengah */
+}
+
+.artikel-section h2::after { /* Atau .artikel-carousel-section h2::after */
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Gaya untuk setiap item artikel */
+.artikel-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* margin-bottom: 15px; Dihapus karena kolom Bootstrap akan diberi mb-4 jika perlu atau g-4 pada row sudah cukup */
+    display: flex; /* Untuk memastikan konten mengisi tinggi jika .d-flex dipakai di parent kolom */
+    flex-direction: column; /* Agar konten di dalam item tetap vertikal */
+}
+
+.artikel-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.artikel-thumbnail {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.artikel-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.artikel-item:hover .artikel-thumbnail img {
+    transform: scale(1.05);
+}
+
+.artikel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column; /* Konten overlay ditata vertikal */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 15px; /* Padding untuk konten overlay */
+}
+
+.artikel-item:hover .artikel-overlay {
+    opacity: 1;
+}
+
+.artikel-content {
+    color: white;
+    text-align: center;
+    /* padding: 15px; Sudah ada di .artikel-overlay */
+}
+
+/* Responsif untuk layar kecil (jika ada penyesuaian untuk item artikel di sini) */
+@media (max-width: 767.98px) {
+    .artikel-header h1 {
+        font-size: 2em;
+    }
+    .artikel-header p.lead {
+        font-size: 1em;
+    }
+    .artikel-section h2 { /* Atau .artikel-carousel-section h2 */
+        font-size: 1.8em;
+    }
+    /* Gaya spesifik Owl Carousel untuk mobile juga tidak diperlukan lagi */
+}
+
+
+/* ... (Sisa CSS Anda untuk .featured-items, footer, responsive global, dll., seperti sebelumnya) ... */
+/* Pastikan tidak ada lagi referensi ke .owl-nav atau .owl-dots di bagian responsive global jika hanya digunakan untuk carousel ini */
+
+/* FORM CSS */
+section.formulir {
+ background-color: #56ab2f;
+}
+
+section.formulir .container {
+   
+    border-radius: 1px;
+    /* Kurung kurawal penutup yang salah di sini sudah saya hapus di iterasi sebelumnya, pastikan tetap terhapus */
+}
+
+/* ---------------------------------------------
+Bagian Tentang Kami / Pricing Plans (Menggunakan kelas .pricing-item dari HTML)
+--------------------------------------------- 
+*/
+.pricing-plans {
+    padding: 60px 0; /* Padding atas-bawah untuk seksi */
+}
+
+.pricing-item { /* Gaya untuk kartu di "Tentang Kami" */
+    background-color: #f9f9f9; /* Latar belakang kartu sedikit abu-abu */
+    padding: 30px; /* Padding dalam kartu */
+    border-radius: 10px; /* Sudut kartu melengkung */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Bayangan halus */
+    margin-bottom: 30px; /* Margin bawah antar kartu */
+    height: 100%; /* Untuk kartu dengan tinggi yang sama dalam satu baris (gunakan bersama display:flex pada parent) */
+}
+
+.pricing-item img { /* Gaya untuk logo di dalam kartu */
+    max-width: 100px; /* Batasi ukuran logo */
+    margin-bottom: 20px; /* Margin bawah logo */
+    display: block; /* Agar margin auto bekerja untuk centering */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-item h4 {
+    font-size: 1.5em; /* Ukuran font judul kartu */
+    margin-bottom: 15px; /* Margin bawah judul */
+    color: #333; /* Warna teks judul */
+}
+
+.pricing-item h6 { /* Digunakan untuk teks utama di HTML Anda */
+    font-size: 1em; /* Ukuran font teks */
+    line-height: 1.6; /* Tinggi baris untuk kenyamanan membaca */
+    color: #555; /* Warna teks abu-abu gelap */
+    font-weight: normal; /* Atur ulang ketebalan font jika h6 punya default tebal */
+}
+
+.pricing-item h4[style*="color:#00bdfe"] { /* Menargetkan h4 yang punya inline style warna biru */
+    font-size: 1.3em; /* Sesuaikan ukuran font untuk heading spesifik ini */
+    color: #00bdfe !important; /* Pertahankan warna biru dari inline style */
+}
+
+
+/* ---------------------------------------------
+Bagian Formulir
+--------------------------------------------- 
+*/
+section.formulir {
+ background-color: #56ab2f; /* Warna hijau dari banner */
+ padding: 60px 0; /* Padding atas-bawah */
+}
+
+section.formulir .container {
+    background-color: #fff; /* Beri kontainer latar putih agar menonjol */
+    padding: 30px; /* Padding dalam kontainer */
+    border-radius: 8px; /* Sudut sedikit melengkung */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Bayangan halus */
+}
+/* Catatan: Ada kelebihan '}' di CSS asli yang sudah dihapus. */
+
+
+/* ---------------------------------------------
+Footer 
+--------------------------------------------- 
+*/
+footer.no-space { /* Kelas jika footer tidak butuh margin atas */
+  margin-top: 0px;
+}
+
+footer {
+  background-color: #00bdfe; /* Warna latar footer (biru) */
+  text-align: center; /* Teks rata tengah */
+  padding: 30px 0px; /* Padding atas-bawah sedikit ditambah */
+  margin-top: 80px; /* Margin atas default disesuaikan */
+}
+
+footer p {
+  color: #fff; /* Warna teks putih */
+  font-weight: 300; /* Ketebalan font tipis */
+  margin-bottom: 0; /* Hilangkan margin bawah default paragraf jika ini satu-satunya konten */
+}
+
+footer p a {
+  color: #fff; /* Warna link putih */
+  font-weight: 500; /* Ketebalan font link */
+  text-decoration: underline; /* Saran: Tambahkan garis bawah agar jelas sebagai link */
+}
+
+footer p a:hover {
+  text-decoration: none; /* Hilangkan garis bawah saat hover */
+}
+
+
+/* ... (CSS Anda yang sudah ada sebelumnya) ... */
+
+/* ---------------------------------------------
+Gaya Halaman Detail Kampanye/Laporan
+--------------------------------------------- */
+.campaign-detail-header .breadcrumb a {
+    text-decoration: none;
+    color: #007bff; /* Warna link breadcrumb */
+}
+.campaign-detail-header .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.campaign-detail-header .campaign-title {
+    color: #2c3e50; /* Warna judul utama halaman detail */
+    margin-bottom: 0.5rem;
+}
+
+.campaign-image-main img {
+    width: 100%;
+    max-height: 500px; /* Batasi tinggi gambar utama */
+    object-fit: cover; /* Pastikan gambar terisi dengan baik */
+}
+.figure-caption {
+    font-size: 0.875em;
+    color: #6c757d;
+}
+
+.section-title-detail {
+    font-size: 1.75rem; /* Ukuran sub-judul di halaman detail */
+    color: #343a40;
+    font-weight: 600;
+}
+
+.campaign-description p {
+    line-height: 1.7;
+    text-align: justify; /* Teks deskripsi rata kiri-kanan */
+    margin-bottom: 1rem;
+}
+
+.campaign-description ul,
+.campaign-description ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+.campaign-description ul li,
+.campaign-description ol li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.campaign-sidebar .card {
+    border: 1px solid #e9ecef; /* Border halus untuk kartu di sidebar */
+}
+
+.campaign-sidebar .card-header {
+    font-size: 1.1rem; /* Ukuran font header kartu sidebar */
+}
+.campaign-sidebar .card-header i {
+    font-size: 1rem; /* Ukuran ikon di header kartu */
+}
+
+
+.campaign-stats-detail li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: #495057;
+    display: flex; /* Untuk alignment ikon dan teks */
+    align-items: center;
+}
+.campaign-stats-detail li i {
+    width: 24px; /* Lebar tetap untuk ikon agar teks sejajar */
+    text-align: center; /* Ikon di tengah area width */
+    color: #0d6efd; /* Warna default ikon statistik, bisa di-override per item */
+}
+.campaign-stats-detail li .text-success i { /* Contoh override warna ikon */
+    color: #198754 !important;
+}
+.campaign-stats-detail li .text-info i {
+    color: #0dcaf0 !important;
+}
+
+
+.campaign-gallery img {
+    border: 1px solid #dee2e6;
+    padding: 0.25rem;
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+}
+.campaign-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+/* Penyesuaian untuk sticky footer jika menggunakan d-flex pada body */
+/* Jika body tidak flex, footer mungkin perlu margin-top: auto yang lebih spesifik */
+.footer-detail {
+    background-color: #00bdfe; /* Samakan dengan footer di index.html jika warnanya beda */
+    color: #fff;
+    padding: 25px 0px; /* Samakan padding */
+    /* margin-top: auto; Jika body adalah flex container dan main flex-grow:1, ini tidak selalu diperlukan */
+}
+
+.footer-detail p {
+    margin-bottom: 0;
+    font-weight: 300;
+}
+.footer-detail p a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.footer-detail p a:hover {
+    text-decoration: none;
+}
+
+/* Responsif (jika ada penyesuaian tambahan) */
+@media (max-width: 767.98px) {
+    .campaign-detail-header .campaign-title {
+        font-size: 2rem; /* Ukuran judul lebih kecil di mobile */
+    }
+    .section-title-detail {
+        font-size: 1.5rem;
+    }
+    .campaign-description p {
+        text-align: left; /* Di mobile, rata kiri mungkin lebih baik */
+    }
+}
